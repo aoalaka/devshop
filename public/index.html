@@ -63,6 +63,7 @@
       font-size: 1rem;
       font-weight: 600;
       transition: background-color 0.3s ease, color 0.3s ease;
+      cursor: pointer;
     }
 
     .cta-button:hover {
@@ -172,7 +173,7 @@
   <header>
     <h1>DevShop</h1>
     <div class="tagline">Automate. Deploy. Scale. Your DevOps, Simplified.</div>
-    <a href="#" class="cta-button">Get Started Free</a>
+    <a href="#how" class="cta-button">Get Started Free</a>
   </header>
 
   <section class="section">
@@ -193,7 +194,7 @@
     </div>
   </section>
 
-  <section class="section how-it-works">
+  <section id="how" class="section how-it-works">
     <h2>How It Works</h2>
     <ol>
       <li>Connect your GitHub repository.</li>
@@ -224,5 +225,13 @@
   <footer>
     &copy; 2025 DevShop Inc. All rights reserved. Crafted with ❤️ for developers.
   </footer>
+
+  <!-- 👇 JavaScript for smooth scroll -->
+  <script>
+    document.querySelector('.cta-button').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector('#how').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>

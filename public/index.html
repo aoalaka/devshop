@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DevShop</title>
+  <title>DevShop – DevOps Automation Platform</title>
   <style>
     * {
       box-sizing: border-box;
@@ -11,70 +11,111 @@
 
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
       background-color: #f1f5f9;
       color: #1e293b;
-      line-height: 1.6;
+    }
+
+    a {
+      color: #0f766e;
+      text-decoration: none;
     }
 
     header {
       background-color: #1e293b;
-      color: #ffffff;
-      padding: 40px 20px;
+      color: #fff;
+      padding: 60px 20px 40px;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
 
     header h1 {
-      margin: 0;
       font-size: 3rem;
-      letter-spacing: -1px;
+      margin-bottom: 10px;
     }
 
     .tagline {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       color: #cbd5e1;
-      margin-top: 10px;
     }
 
-    main {
-      max-width: 960px;
+    .section {
+      max-width: 1000px;
       margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #0f172a;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #fff;
       padding: 20px;
-      background-color: #ffffff;
       border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-      text-align: center;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
     }
 
-    main p {
-      font-size: 1.1rem;
-      color: #475569;
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
     }
 
-    .button {
+    .cta-button {
+      display: inline-block;
       background-color: #0f766e;
       color: white;
-      border: none;
       padding: 14px 32px;
-      margin-top: 30px;
-      font-size: 1rem;
       border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-size: 1rem;
+      margin-top: 30px;
+      transition: background-color 0.3s ease;
     }
 
-    .button:hover {
+    .cta-button:hover {
       background-color: #0d9488;
-      transform: translateY(-2px);
+    }
+
+    .how-it-works {
+      background-color: #e2e8f0;
+      padding: 50px 20px;
+      border-radius: 12px;
+    }
+
+    .how-it-works ol {
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+
+    .testimonials {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      margin-top: 40px;
+    }
+
+    .testimonial {
+      background-color: #fff;
+      padding: 20px;
+      border-left: 5px solid #0f766e;
+      border-radius: 8px;
+      font-style: italic;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
     }
 
     footer {
       text-align: center;
       padding: 30px 20px;
       font-size: 0.95rem;
-      color: #94a3b8;
+      color: #64748b;
+      background-color: #f8fafc;
       margin-top: 80px;
     }
 
@@ -83,13 +124,9 @@
         font-size: 2.2rem;
       }
 
-      .button {
+      .cta-button {
         width: 100%;
-        padding: 14px 0;
-      }
-
-      main {
-        margin: 30px 10px;
+        text-align: center;
       }
     }
   </style>
@@ -97,19 +134,58 @@
 <body>
   <header>
     <h1>DevShop</h1>
-    <div class="tagline">Automate. Deploy. Simplify.</div>
+    <div class="tagline">Automate. Deploy. Scale. Your DevOps, Simplified.</div>
+    <a href="#" class="cta-button">Get Started Free</a>
   </header>
 
-  <main>
-    <p>
-      Welcome to <strong>DevShop</strong> — your DevOps automation engine. Deploy apps faster, manage pipelines smarter, and scale confidently.
-    </p>
+  <section class="section">
+    <h2>Why DevShop?</h2>
+    <div class="features">
+      <div class="card">
+        <h3>🚀 1-Click Deployments</h3>
+        <p>Push to GitHub, and we handle the rest — from build to deployment on your EC2 or Docker container.</p>
+      </div>
+      <div class="card">
+        <h3>🔐 Built-In Security</h3>
+        <p>SSH key rotation, environment secrets, and role-based access control baked in from the ground up.</p>
+      </div>
+      <div class="card">
+        <h3>📊 Realtime Monitoring</h3>
+        <p>Integrated with PM2 and system logs to keep your deployments observable and your team informed.</p>
+      </div>
+    </div>
+  </section>
 
-    <button class="button" onclick="alert('🚀 Coming soon!')">Get Started</button>
-  </main>
+  <section class="section how-it-works">
+    <h2>How It Works</h2>
+    <ol>
+      <li>Connect your GitHub repository.</li>
+      <li>Configure your EC2 or container target once.</li>
+      <li>Push code to <code>main</code> — and watch it go live.</li>
+      <li>Monitor deployments in real time via the DevShop dashboard.</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>What People Are Saying</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        "DevShop reduced our deployment time from hours to seconds. It's like Heroku, but I own the infrastructure."
+        <br><strong>– Amina, Backend Engineer</strong>
+      </div>
+      <div class="testimonial">
+        "We finally have visibility into what happens after merging code. DevShop made our CI/CD practical and reliable."
+        <br><strong>– Tom, CTO at ScaleVerse</strong>
+      </div>
+      <div class="testimonial">
+        "No more DevOps chaos! We use DevShop for every client deployment now."
+        <br><strong>– Femi, Freelancer & Full-Stack Dev</strong>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    &copy; 2025 DevShop Inc. All rights reserved. Built with ❤️ by the DevShop Team.
+    &copy; 2025 DevShop Inc. All rights reserved. Crafted with ❤️ for developers who love automation.
   </footer>
 </body>
 </html>

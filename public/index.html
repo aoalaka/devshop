@@ -4,38 +4,70 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DevShop – DevOps Automation Platform</title>
+
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --primary: #0f766e;
+      --primary-hover: #0d9488;
+      --dark: #1e293b;
+      --muted: #64748b;
+      --light: #f8fafc;
+    }
+
     * {
       box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
+      font-family: 'Inter', sans-serif;
       background-color: #f1f5f9;
-      color: #1e293b;
+      color: var(--dark);
+      line-height: 1.7;
     }
 
     a {
-      color: #0f766e;
+      color: var(--primary);
       text-decoration: none;
     }
 
     header {
-      background-color: #1e293b;
-      color: #fff;
-      padding: 60px 20px 40px;
+      background: linear-gradient(to right, #1e3a8a, #0f766e);
+      color: #ffffff;
+      padding: 70px 20px 50px;
       text-align: center;
     }
 
     header h1 {
       font-size: 3rem;
       margin-bottom: 10px;
+      font-weight: 700;
     }
 
     .tagline {
-      font-size: 1.3rem;
-      color: #cbd5e1;
+      font-size: 1.2rem;
+      color: #d1d5db;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #ffffff;
+      color: var(--primary);
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: var(--primary-hover);
+      color: #fff;
     }
 
     .section {
@@ -47,7 +79,8 @@
     .section h2 {
       font-size: 2rem;
       margin-bottom: 20px;
-      color: #0f172a;
+      color: var(--dark);
+      font-weight: 600;
     }
 
     .features {
@@ -58,7 +91,7 @@
 
     .card {
       background: #fff;
-      padding: 20px;
+      padding: 24px;
       border-radius: 12px;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
     }
@@ -66,21 +99,13 @@
     .card h3 {
       margin-top: 0;
       font-size: 1.2rem;
+      font-weight: 600;
     }
 
-    .cta-button {
-      display: inline-block;
-      background-color: #0f766e;
-      color: white;
-      padding: 14px 32px;
-      border-radius: 8px;
+    .card p {
+      color: var(--muted);
       font-size: 1rem;
-      margin-top: 30px;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background-color: #0d9488;
+      margin-top: 10px;
     }
 
     .how-it-works {
@@ -104,18 +129,26 @@
     .testimonial {
       background-color: #fff;
       padding: 20px;
-      border-left: 5px solid #0f766e;
+      border-left: 5px solid var(--primary);
       border-radius: 8px;
       font-style: italic;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      color: var(--muted);
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 10px;
+      font-style: normal;
+      color: var(--dark);
     }
 
     footer {
       text-align: center;
       padding: 30px 20px;
       font-size: 0.95rem;
-      color: #64748b;
-      background-color: #f8fafc;
+      color: var(--muted);
+      background-color: var(--light);
       margin-top: 80px;
     }
 
@@ -126,7 +159,11 @@
 
       .cta-button {
         width: 100%;
-        text-align: center;
+        padding: 14px 0;
+      }
+
+      .section {
+        margin: 40px 10px;
       }
     }
   </style>
@@ -143,15 +180,15 @@
     <div class="features">
       <div class="card">
         <h3>🚀 1-Click Deployments</h3>
-        <p>Push to GitHub, and we handle the rest — from build to deployment on your EC2 or Docker container.</p>
+        <p>Push to GitHub, and we handle the rest — from build to deployment on EC2 or Docker.</p>
       </div>
       <div class="card">
         <h3>🔐 Built-In Security</h3>
-        <p>SSH key rotation, environment secrets, and role-based access control baked in from the ground up.</p>
+        <p>SSH key rotation, environment secrets, and RBAC included by design.</p>
       </div>
       <div class="card">
         <h3>📊 Realtime Monitoring</h3>
-        <p>Integrated with PM2 and system logs to keep your deployments observable and your team informed.</p>
+        <p>Integrates with PM2 and system logs to keep your stack observable.</p>
       </div>
     </div>
   </section>
@@ -160,9 +197,9 @@
     <h2>How It Works</h2>
     <ol>
       <li>Connect your GitHub repository.</li>
-      <li>Configure your EC2 or container target once.</li>
-      <li>Push code to <code>main</code> — and watch it go live.</li>
-      <li>Monitor deployments in real time via the DevShop dashboard.</li>
+      <li>Configure your deployment target once.</li>
+      <li>Push to <code>main</code> and go live automatically.</li>
+      <li>Monitor everything from your DevShop dashboard.</li>
     </ol>
   </section>
 
@@ -170,22 +207,22 @@
     <h2>What People Are Saying</h2>
     <div class="testimonials">
       <div class="testimonial">
-        "DevShop reduced our deployment time from hours to seconds. It's like Heroku, but I own the infrastructure."
-        <br><strong>– Amina, Backend Engineer</strong>
+        “DevShop reduced our deployment time from hours to seconds.”
+        <strong>– Amina, Backend Engineer</strong>
       </div>
       <div class="testimonial">
-        "We finally have visibility into what happens after merging code. DevShop made our CI/CD practical and reliable."
-        <br><strong>– Tom, CTO at ScaleVerse</strong>
+        “No more DevOps chaos! We use DevShop for every project.”
+        <strong>– Femi, Freelance Developer</strong>
       </div>
       <div class="testimonial">
-        "No more DevOps chaos! We use DevShop for every client deployment now."
-        <br><strong>– Femi, Freelancer & Full-Stack Dev</strong>
+        “We finally have visibility into production builds. Love it.”
+        <strong>– Tom, CTO at ScaleVerse</strong>
       </div>
     </div>
   </section>
 
   <footer>
-    &copy; 2025 DevShop Inc. All rights reserved. Crafted with ❤️ for developers who love automation.
+    &copy; 2025 DevShop Inc. All rights reserved. Crafted with ❤️ for developers.
   </footer>
 </body>
 </html>

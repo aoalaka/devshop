@@ -5,60 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DevShop</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
+      padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f7f9fc;
-      color: #333;
+      background-color: #f1f5f9;
+      color: #1e293b;
+      line-height: 1.6;
     }
 
     header {
       background-color: #1e293b;
       color: #ffffff;
-      padding: 20px 40px;
+      padding: 40px 20px;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
 
-    h1 {
+    header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
+      letter-spacing: -1px;
     }
 
     .tagline {
       font-size: 1.2rem;
       color: #cbd5e1;
-      margin-top: 5px;
+      margin-top: 10px;
     }
 
     main {
-      max-width: 800px;
-      margin: 50px auto;
+      max-width: 960px;
+      margin: 60px auto;
       padding: 20px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
       text-align: center;
     }
 
+    main p {
+      font-size: 1.1rem;
+      color: #475569;
+    }
+
     .button {
-      background-color: #10b981;
+      background-color: #0f766e;
       color: white;
       border: none;
-      padding: 12px 24px;
-      margin-top: 20px;
+      padding: 14px 32px;
+      margin-top: 30px;
       font-size: 1rem;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .button:hover {
-      background-color: #059669;
+      background-color: #0d9488;
+      transform: translateY(-2px);
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #888;
-      margin-top: 60px;
+      padding: 30px 20px;
+      font-size: 0.95rem;
+      color: #94a3b8;
+      margin-top: 80px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      .button {
+        width: 100%;
+        padding: 14px 0;
+      }
+
+      main {
+        margin: 30px 10px;
+      }
     }
   </style>
 </head>
@@ -69,13 +101,15 @@
   </header>
 
   <main>
-    <p>Welcome to <strong>DevShop</strong> — your all-in-one DevOps automation platform. Seamlessly deploy and manage your apps with CI/CD pipelines tailored for speed and scale.</p>
+    <p>
+      Welcome to <strong>DevShop</strong> — your DevOps automation engine. Deploy apps faster, manage pipelines smarter, and scale confidently.
+    </p>
 
-    <button class="button" onclick="alert('Getting started coming soon!')">Get Started</button>
+    <button class="button" onclick="alert('🚀 Coming soon!')">Get Started</button>
   </main>
 
   <footer>
-    &copy; 2025 DevShop Inc. All rights reserved. Built with ❤️ by the great DevShop Team.
+    &copy; 2025 DevShop Inc. All rights reserved. Built with ❤️ by the DevShop Team.
   </footer>
 </body>
 </html>
